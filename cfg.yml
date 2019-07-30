@@ -1,1 +1,31 @@
-change: true
+
+-   name: machine
+    enalbe: true
+    expression:  machine='rhel[\S\s]*?'
+    replace: machine='pc'
+
+-   name: emulator
+    enable: true
+    expression: <emulator>/usr/libexec/qemu-kvm
+    replace: <emulator>/usr/bin/kvm-spice
+
+-   name: graphics
+    enable: true
+    expression: <graphics[\S\s]*?</graphics>
+    replace: <graphics type='spice'  autoport='yes' />
+
+-   name: disk
+    enable: true
+    expression: <source file='/home/VPS/
+    replace: <source file='/tank/kvm-pool/gz-tmp/
+
+-   name: disk-cache
+    enable: true
+    expression: cache='[\S]*'
+    replace: 
+
+-   name: disk-io
+    enable: true
+    expression: io='[\S]*'
+    replace:
+
